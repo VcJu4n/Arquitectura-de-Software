@@ -2,7 +2,7 @@
 import java.util.*;
 
 // PATRÓN CREACIONAL: Singleton para la clase Biblioteca
-class Biblioteca {
+public class Biblioteca {
     private static Biblioteca instancia;
     private List<Libro> libros = new ArrayList<>();
 
@@ -102,7 +102,7 @@ class BusquedaPorAutor implements BusquedaStrategy {
     }
 }
 
-public class Main {
+public class main {
     public static void main(String[] args) {
         Biblioteca biblio = Biblioteca.getInstancia();
 
@@ -112,12 +112,12 @@ public class Main {
         LibroPDF libroPDF = new LibroPDF("Contenido PDF: Programación en Java");
         biblio.agregarLibro(new LibroPDFAdapter("Java Básico", "Juan Pérez", libroPDF));
 
-        System.out.println("🔍 Búsqueda por título: 'Java'");
+        System.out.println("Búsqueda por título: 'Java'");
         List<Libro> resultado1 = biblio.buscar(new BusquedaPorTitulo(), "Java");
-        resultado1.forEach(libro -> System.out.println("📘 " + libro.getInfo()));
+        resultado1.forEach(libro -> System.out.println("libro.getInfo()));
 
-        System.out.println("\n🔍 Búsqueda por autor: 'García'");
+        System.out.println("Búsqueda por autor: 'García'");
         List<Libro> resultado2 = biblio.buscar(new BusquedaPorAutor(), "García");
-        resultado2.forEach(libro -> System.out.println("📗 " + libro.getInfo()));
+        resultado2.forEach(libro -> System.out.println("libro.getInfo()));
     }
 }
